@@ -302,17 +302,28 @@
       letter-spacing: .3px;
     }
 
+    .pdf-company-info {
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 1.45;
+      color: #374151;
+      font-weight: 600;
+    }
+
     .pdf-number {
       text-align: right;
       font-size: 13px;
       color: #374151;
+      align-self: flex-start;
+      min-width: 170px;
+      padding-top: 4px;
     }
 
     .pdf-number strong {
       display: block;
       color: #111;
-      font-size: 22px;
-      margin-bottom: 4px;
+      font-size: 24px;
+      margin-bottom: 6px;
     }
 
     .pdf-box {
@@ -429,7 +440,7 @@
   <div class="app">
     <header class="topbar">
       <div class="brand">
-        <img id="appLogo" alt="Logo PrimeTech" src="logo-primetech.png" onerror="this.src='https://i.imgur.com/hop3LpT.png'" />
+        <img id="appLogo" alt="Logo PrimeTech" src="logo-primetech.png" onerror="this.src='https://i.imgur.com/Mz1EcZS.png'" />
         <div>
           <h1>PrimeTech Orçamentos</h1>
           <p>Segurança Eletrônica • Elétrica • CFTV • Alarmes • Manutenção</p>
@@ -465,6 +476,7 @@
           <option>Pix/Dinheiro - 50% antes e 50% na finalização</option>
           <option>Cartão até 6x sem juros</option>
           <option>Cartão até 10x com acréscimo da operadora</option>
+          <option>Boleto</option>
           <option>A combinar</option>
         </select>
       </div>
@@ -541,30 +553,29 @@
   <div id="pdfArea">
     <div class="pdf-header">
       <div class="pdf-brand">
-        <img id="pdfLogo" alt="Logo PrimeTech" src="logo-primetech.png" onerror="this.src='https://i.imgur.com/hop3LpT.png'" />
+        <img id="pdfLogo" alt="Logo PrimeTech" src="logo-primetech.png" onerror="this.src='https://i.imgur.com/Mz1EcZS.png'" />
         <div>
           <h2>Prime<span>Tech</span></h2>
           <p>SOLUÇÕES EM SEGURANÇA E ELÉTRICA</p>
-          <div>CNPJ: 35.405.652/0001-90</div>
-        <div>Fone: (79) 99847-8570</div>
-        <div>www.primetech.seg.br | @primetech.seg</div>
-          <div class="badge">Orçamento comercial</div>
+          <div class="pdf-company-info">
+            CNPJ: 35.405.652/0001-90<br>
+            Fone: (79) 99847-8570<br>
+            www.primetech.seg.br | @primetech.seg
+          </div>
         </div>
       </div>
-      <div align="right" class="pdf-number">
+      <div class="pdf-number">
         <strong id="pdfQuoteNumber">ORÇ-0001</strong>
         <div>Data: <span id="pdfDate"></span></div>
         <div>Validade: <span id="pdfValidity"></span></div>
       </div>
     </div>
 
-    <div class="pdf-two">
-      <div class="pdf-box">
-        <div class="pdf-title">Cliente</div>
-        <div><strong id="pdfClientName">Cliente não informado</strong></div>
-        <div id="pdfClientPhone"></div>
-        <div id="pdfClientAddress"></div>
-      </div>
+    <div class="pdf-box">
+      <div class="pdf-title">Cliente</div>
+      <div><strong id="pdfClientName">Cliente não informado</strong></div>
+      <div id="pdfClientPhone"></div>
+      <div id="pdfClientAddress"></div>
     </div>
 
     <div class="pdf-box">
@@ -841,6 +852,5 @@
     loadLogo();
     newQuote();
     renderSaved();
-  </script>
-</body>
+  </script></body>
 </html>
