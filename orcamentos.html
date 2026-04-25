@@ -493,7 +493,7 @@
       </div>
       <div>
         <label>Telefone/WhatsApp</label>
-        <input id="clientPhone" placeholder="(82) 99999-9999" />
+        <input id="clientPhone" placeholder="(79) 99847-8570" maxlength="15" inputmode="numeric" />
       </div>
       <div class="full">
         <label>Endereço</label>
@@ -637,7 +637,21 @@
     function formatDateBR(date) {
       if (!date) return '';
       const [y, m, d] = date.split('-');
-      return `${d}/${m}/${y}`;
+      return d + '/' + m + '/' + y;
+    }
+
+    function maskPhone(value) {
+      const digits = String(value || '').replace(/[^0-9]/g, '').slice(0, 11);
+
+      if (digits.length <= 2) {
+        return digits;
+      }
+
+      if (digits.length <= 7) {
+        return '(' + digits.slice(0, 2) + ') ' + digits.slice(2);
+      }
+
+      return '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 7) + '-' + digits.slice(7);
     }
 
     function getSaved() {
@@ -842,6 +856,11 @@
         $('pdfLogo').src = savedLogo;
       }
     }
+
+    $('clientPhone').addEventListener('input', event => {
+      event.target.value = maskPhone(event.target.value);
+      updateAll();
+    });
 
     $('logoInput').addEventListener('change', event => {
       const file = event.target.files[0];
