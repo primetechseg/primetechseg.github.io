@@ -598,3 +598,13 @@ h1 {
   transform: scale(1.06);
   filter: blur(2px);
 }
+
+.gallery-wrapper .nav {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gallery-wrapper:hover .nav {
+  opacity: 1;
+  pointer-events: auto;
+}
