@@ -114,10 +114,10 @@ document.addEventListener("DOMContentLoaded", () => {
     renderLightbox();
   }
 
-  galleryImages.forEach((img, index) => {
-    img.style.cursor = "pointer";
-    img.addEventListener("click", () => openLightbox(index));
-  });
+  document.querySelectorAll(".gallery-item").forEach((item, index) => {
+  item.style.cursor = "pointer";
+  item.addEventListener("click", () => openLightbox(index));
+});
 
   closeLightbox.addEventListener("click", closeGallery);
   lightboxNext.addEventListener("click", nextImage);

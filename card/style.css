@@ -649,3 +649,8 @@ h1 {
     right: 8px;
   }
 }
+
+.gallery-item::before,
+.gallery-item::after {
+  pointer-events: none;
+}
