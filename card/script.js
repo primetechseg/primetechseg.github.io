@@ -47,3 +47,17 @@ document.querySelectorAll(".service-card, .review-card, .glass, .cta").forEach(e
   el.classList.add("hidden");
   observer.observe(el);
 });
+
+const gallery = document.getElementById("gallery");
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
+
+if (gallery) {
+  next.onclick = () => {
+    gallery.scrollBy({ left: 200, behavior: "smooth" });
+  };
+
+  prev.onclick = () => {
+    gallery.scrollBy({ left: -200, behavior: "smooth" });
+  };
+}
