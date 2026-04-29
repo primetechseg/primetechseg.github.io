@@ -247,3 +247,35 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.hidden {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.7s ease;
+}
+
+.pulse {
+  animation: pulseWhats 0.9s ease;
+}
+
+@keyframes pulseWhats {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+}
