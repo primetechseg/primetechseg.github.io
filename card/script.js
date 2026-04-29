@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const galleryImages = document.querySelectorAll(".gallery img");
+  const galleryImages = document.querySelectorAll(".gallery-item img, .gallery img");
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightboxImage");
   const lightboxCounter = document.getElementById("lightboxCounter");
