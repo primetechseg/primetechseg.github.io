@@ -481,7 +481,7 @@ export default function App() {
                 <div className="galleryOverlay">
                   <span>{item.category}</span>
                   <h3>{item.title}</h3>
-                  <div className="roundIcon"><ScanSearch size={28} /></div>
+                  <ScanSearch size={28} />
                 </div>
               </button>
             ))}
