@@ -25,6 +25,7 @@ import {
   Award,
   MessageCircle,
   Store,
+  Scan-search,
 } from "lucide-react";
 import "./App.css";
 
@@ -480,7 +481,7 @@ export default function App() {
                 <div className="galleryOverlay">
                   <span>{item.category}</span>
                   <h3>{item.title}</h3>
-                  <small>Ampliar imagem</small>
+                  <div className="roundIcon"><Scan-search size={28} /></div>
                 </div>
               </button>
             ))}
